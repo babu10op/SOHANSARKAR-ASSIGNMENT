@@ -1,0 +1,21 @@
+.text-center{
+    text-align: center;
+}
+.container{
+    justify-items: center;
+    background-color: slategray;
+    width: 134px;
+    border-radius: 5px;
+}
+.button{
+       border-radius: 5px;
+       color: darkgray;
+}
+input{
+    padding: 5px;
+    width: 118px;
+    border-radius: 12px;
+    background-color: gainsboro;
+}
+
+

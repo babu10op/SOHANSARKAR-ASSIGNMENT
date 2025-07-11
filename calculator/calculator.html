@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class=" text-center">HTML JAVA AND CSS CALUCLATOR PROJECT</h1>
+    <div class="container">
+        <div class="row">
+         <input type="input" type="text"/>
+        </div>
+        <div class="row">
+         <button class="button">1</button>
+         <button class="button">2</button>
+         <button class="button">3</button>
+         <button class="button">4</button>
+         <button class="button">5</button>
+         <br>
+         <br>
+         <button class="button">6</button>
+         <button class="button">7</button>
+         <button class="button">8</button>
+         <button class="button">9</button>
+         <button class="button">0</button>
+         <br>
+         <br>
+         <button class="button">+</button>
+         <button class="button">-</button>
+         <button class="button">*</button>
+         <button class="button">=</button>
+         <button class="button">%</button>
+         <br>
+         <br>
+         <button class="button">()</button>
+         <button class="button">/</button>
+         <button class="button">X</button>
+         <button class="button">a</button>
+         <button class="button">b</button>
+        </div>
+    </div>
+    <script>
+        <!-- Add this before </body> in index.html -->
+
+    // Select the input and all buttons
+    const input = document.querySelector('input[type="input"]');
+    const buttons = document.querySelectorAll('.button');
+
+    // Store the current expression
+    let expression = "";
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const value = button.textContent;
+
+            if (value === '=') {
+                try {
+                    // Evaluate the expression
+                    expression = eval(expression.replace('X', '*'));
+                    input.value = expression;
+                } catch {
+                    input.value = "Error";
+                    expression = "";
+                }
+            } else if (value === 'X') {
+                // Clear input
+                expression = "";
+                input.value = "";
+            } else {
+                // Append value to expression
+                expression += value;
+                input.value = expression;
+            }
+        });
+    });
+    </script>
+</body>
+</html>
